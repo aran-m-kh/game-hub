@@ -10,15 +10,15 @@ function App() {
                 lg: `   "nav nav" "aside main"`, //more than 1024px
             }}
         >
-            <GridItem area="nav" bg={'red.300'}>
+            <GridItem area="nav">
                 <Navbar />
             </GridItem>
 
-            <GridItem hideBelow={'lg'} area="aside" bg={'blue.300'}>
+            <GridItem hideBelow={'lg'} area="aside">
                 aside
             </GridItem>
 
-            <GridItem area="main" bg={'green.300'}>
+            <GridItem area="main">
                 <GameGrid />
             </GridItem>
         </Grid>
