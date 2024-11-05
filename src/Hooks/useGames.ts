@@ -2,9 +2,19 @@ import APIProvide from '@/sevices/API-provide'
 import { CanceledError } from 'axios'
 import { useEffect, useState } from 'react'
 
-interface Igame {
+interface Iplatform {
     id: number
     name: string
+    slug: string
+}
+
+export interface Igame {
+    id: number
+    name: string
+    background_image: string
+    parent_platforms: {
+        platform: Iplatform
+    }[]
 }
 
 interface IfetchGameResponse {
