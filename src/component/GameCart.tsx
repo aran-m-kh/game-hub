@@ -2,7 +2,7 @@ import { Card, Heading, HStack, Image } from '@chakra-ui/react'
 import { Igame } from '@/Hooks/useGames'
 import PlatformsIconsList from './PlatformsIconsList'
 import CriticScore from './CriticScore'
-
+import getCropedImage from '@/sevices/getCropedImage'
 interface Props {
     game: Igame
 }
@@ -10,7 +10,10 @@ interface Props {
 function GameCart({ game }: Props) {
     return (
         <Card.Root width={'320px'} borderRadius={10} overflow={'hidden'}>
-            <Image src={game.background_image}></Image>
+            <Image
+                src={getCropedImage(game.background_image)}
+                alt={game.background_image}
+            ></Image>
             <Card.Body>
                 <Heading fontSize={'xl'}>{game.name}</Heading>
                 <HStack justifyContent={'space-between'} marginTop={2}>
