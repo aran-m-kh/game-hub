@@ -2,7 +2,7 @@ import APIProvide from '@/sevices/API-provide'
 import { CanceledError } from 'axios'
 import { useEffect, useState } from 'react'
 
-interface Iplatform {
+export interface Iplatform {
     id: number
     name: string
     slug: string
@@ -15,6 +15,7 @@ export interface Igame {
     parent_platforms: {
         platform: Iplatform
     }[]
+    metacritic: number
 }
 
 interface IfetchGameResponse {
