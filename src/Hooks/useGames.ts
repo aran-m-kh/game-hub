@@ -25,16 +25,20 @@ interface IfetchGameResponse {
 const useGames = () => {
     const [games, setGames] = useState<Igame[]>([])
     const [errors, setErrors] = useState<string>('')
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         const controller = new AbortController()
 
+        setIsLoading(true)
         APIProvide.get<IfetchGameResponse>('/games', {
             signal: controller.signal,
         })
             .then((response) => {
                 setGames(response.data.results)
+                setIsLoading(false)
             })
+
             .catch((error) => {
                 if (error instanceof CanceledError) return
                 setErrors(error.message)
@@ -43,7 +47,7 @@ const useGames = () => {
         return () => controller.abort()
     }, [])
 
-    return { games, errors }
+    return { games, errors, isLoading }
 }
 
 export default useGames
