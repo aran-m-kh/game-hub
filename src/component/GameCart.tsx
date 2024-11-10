@@ -9,7 +9,7 @@ interface Props {
 
 function GameCart({ game }: Props) {
     return (
-        <Card.Root width={'320px'} borderRadius={10} overflow={'hidden'}>
+        <Card.Root>
             <Image
                 src={getCropedImage(game.background_image)}
                 alt={game.background_image}

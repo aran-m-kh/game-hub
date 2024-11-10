@@ -3,7 +3,7 @@ import { Card } from '@chakra-ui/react'
 
 function Skeleton() {
     return (
-        <Card.Root width={'320px'} borderRadius={10} overflow={'hidden'}>
+        <Card.Root>
             <SkeletonCircle height="200px" />
             <Card.Body>
                 <SkeletonText />
