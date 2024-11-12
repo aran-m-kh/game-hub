@@ -7,7 +7,7 @@ interface probs {
 
 function GameContainer({ children }: probs) {
     return (
-        <Box width={'320px'} borderRadius={10} overflow={'hidden'}>
+        <Box borderRadius={10} overflow={'hidden'}>
             {children}
         </Box>
     )

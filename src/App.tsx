@@ -15,7 +15,7 @@ function App() {
                 <Navbar />
             </GridItem>
 
-            <GridItem hideBelow={'lg'} area="aside">
+            <GridItem hideBelow={'lg'} area="aside" padding={5} width={'200px'}>
                 <GenresList />
             </GridItem>
 
